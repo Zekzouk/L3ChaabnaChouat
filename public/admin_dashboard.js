@@ -14,9 +14,10 @@ function setupNavigation() {
 
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const target = link.getAttribute('data-target');
-            if (!target) return;
+            if (!target) return; // Allow normal link navigation if there is no data-target
+
+            e.preventDefault();
 
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');

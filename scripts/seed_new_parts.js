@@ -23,10 +23,12 @@ const seedProducts = async () => {
 
         let seller = await User.findOne({ role: 'seller' });
         if (!seller) {
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash('11111111', salt);
             seller = await User.create({
                 name: 'AutoParts DZ',
-                email: 'seller@autoparts.dz',
-                password: 'hashed_password', 
+                email: 'seller@gmail.com',
+                password: hashedPassword, 
                 phone: '0555123456',
                 wilaya: '16 - Alger',
                 role: 'seller',
