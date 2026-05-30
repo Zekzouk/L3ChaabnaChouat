@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | SAYARATI</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="logo-wrapper">
+            <div class="logo">SAYA<span>RATI</span></div>
+        </div>
+
+        <div class="auth-toggle">
+            <button class="toggle-btn active" id="btn-buyer" onclick="setMode('buyer')">زبون (مشتري)</button>
+            <button class="toggle-btn" id="btn-seller" onclick="setMode('seller')">بائع (متجر)</button>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label>البريد الإلكتروني</label>
+                <input type="email" id="login-email" class="form-control" placeholder="example@mail.com" required>
+            </div>
+            <div class="form-group">
+                <label>كلمة المرور</label>
+                <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn">تسجيل الدخول كزبون</button>
+        </form>
+
+        <div class="form-footer">
+            ليس لديك حساب؟ <a href="register.html">إنشاء حساب جديد</a>
+            <br><br>
+            <a href="index.html" style="color: var(--primary); font-weight: 600;">⬅️ العودة لتصفح المتجر</a>
+            <br><br>
+            <a href="admin_dashboard.html" style="color: var(--text-secondary); font-size: 0.8rem;">الدخول كمدير نظام (تجريبي)</a>
+        </div>
+    </div>
+
+    
+    <div class="toast" id="toastMsg" style="background-color: var(--primary);">جارٍ تسجيل الدخول...</div>
+
+    <script src="shared.js"></script>
+    <script src="login.js" defer></script>
+</body>
+</html>

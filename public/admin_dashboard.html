@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإدارة | SAYARATI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="dashboard-shared.css">
+    <link rel="stylesheet" href="admin_dashboard.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">SAYA<span>RATI</span></div>
+            <span class="admin-badge-logo">لوحة التحكم (الإدارة)</span>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" data-target="dashboard-section">
+                    <span>📊</span> لوحة القيادة
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-target="users-section">
+                    <span>👥</span> إدارة المستخدمين
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-target="sellers-section">
+                    <span>🏪</span> إدارة المتاجر
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-target="products-section">
+                    <span>📦</span> إدارة المنتجات
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <span>🏠</span> العودة للمتجر
+                </a>
+            </li>
+            <li class="nav-item" style="margin-top: 50px;">
+                <a href="#" id="logoutBtn" class="nav-link logout">
+                    <span>🚪</span> تسجيل الخروج
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="header">
+            <div class="header-title" id="welcomeMsg">أهلاً بك، المدير العام 👋</div>
+            <div class="header-actions">
+                <span class="admin-badge">مدير النظام</span>
+                <button class="profile-btn">
+                    <span class="profile-avatar">👨‍💼</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="dashboard-body">
+
+            <section id="dashboard-section" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon users">👥</div>
+                        <div class="stat-info">
+                            <h4>إجمالي الزبائن</h4>
+                            <p id="totalUsersCount">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon sellers">🏪</div>
+                        <div class="stat-info">
+                            <h4>المتاجر النشطة</h4>
+                            <p id="totalSellersCount">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon products">📦</div>
+                        <div class="stat-info">
+                            <h4>إجمالي المنتجات</h4>
+                            <p id="totalProductsCount">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-section">
+                    <div class="table-header">
+                        <h3>طلبات المتاجر الجديدة</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الاسم</th>
+                                <th>البريد الإلكتروني</th>
+                                <th>الحالة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashPendingSellersTable">
+                            <tr>
+                                <td colspan="4" style="text-align:center; padding: 20px;">لا توجد طلبات معلقة</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="users-section" class="content-section">
+                <div class="table-section">
+                    <div class="table-header">
+                        <h3>قائمة جميع المستخدمين</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الاسم</th>
+                                <th>البريد الإلكتروني</th>
+                                <th>الرتبة</th>
+                                <th>الحالة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="allUsersTable">
+                            <tr>
+                                <td colspan="5" style="text-align:center; padding: 20px;">جارٍ التحميل...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="sellers-section" class="content-section">
+                <div class="table-section">
+                    <div class="table-header">
+                        <h3>🏪 طلبات فتح المتاجر - قيد المراجعة</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>اسم البائع</th>
+                                <th>اسم المتجر</th>
+                                <th>رقم السجل</th>
+                                <th>المستند</th>
+                                <th>البريد الإلكتروني</th>
+                                <th>الهاتف</th>
+                                <th>الولاية</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pendingSellersTable">
+                            <tr>
+                                <td colspan="8" style="text-align:center; padding: 30px; color: var(--text-secondary);">
+                                    لا توجد طلبات معلقة حالياً ✅
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-section" style="margin-top: 20px;">
+                    <div class="table-header">
+                        <h3>جميع البائعين المسجلين</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الاسم</th>
+                                <th>اسم المتجر</th>
+                                <th>البريد الإلكتروني</th>
+                                <th>الحالة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="allSellersTable">
+                            <tr>
+                                <td colspan="5" style="text-align:center; padding: 20px;">جارٍ التحميل...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="products-section" class="content-section">
+                <div class="table-section">
+                    <div class="table-header">
+                        <h3>📦 جميع المنتجات المعروضة</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>المنتج</th>
+                                <th>الفئة</th>
+                                <th>البائع / المتجر</th>
+                                <th>السعر</th>
+                                <th>الحالة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="allProductsTable">
+                            <tr>
+                                <td colspan="6" style="text-align:center; padding: 20px;">جارٍ تحميل المنتجات...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="toast" id="toastMsg">تم تنفيذ العملية بنجاح!</div>
+
+    <script src="shared.js"></script>
+    <script src="admin_dashboard.js"></script>
+</body>
+</html>

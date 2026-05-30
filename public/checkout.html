@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الطلب | SAYARATI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">SAYA<span>RATI</span></a>
+        <div style="color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">
+            <span>العودة للمتجر</span> | <span>تأمين وتشفير SSL 🔒</span>
+        </div>
+    </nav>
+
+    <div class="checkout-container">
+        <div class="box">
+            <h3>تفاصيل الشحن والتوصيل (Yalidine)</h3>
+            <form id="checkout-form">
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
+                    <div class="form-group">
+                        <label>الاسم الكامل</label>
+                        <input type="text" id="c-name" class="form-control" required placeholder="أدخل اسمك">
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف</label>
+                        <input type="tel" id="c-phone" class="form-control" required placeholder="0550 XX XX XX">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>الولاية</label>
+                    <select class="form-control" required id="wilaya-select" onchange="updateShipping()">
+                        <option value="0">اختر الولاية...</option>
+                        <option value="400">16 - الجزائر (400 دج)</option>
+                        <option value="600">09 - البليدة (600 دج)</option>
+                        <option value="800">31 - وهران (800 دج)</option>
+                        <option value="900">25 - قسنطينة (900 دج)</option>
+                        <option value="1200">01 - أدرار (1200 دج)</option>
+                        <option value="700">أخرى (700 دج)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>العنوان الكامل / البلدية</label>
+                    <input type="text" id="c-address" class="form-control" required placeholder="الشارع، الحي، البلدية">
+                </div>
+                <div class="form-group">
+                    <label>طريقة الدفع</label>
+                    <div style="padding: 15px; border: 1px solid var(--primary); border-radius: var(--radius-md); background: rgba(242,101,34,0.1); font-weight: bold;">
+                        🟢 الدفع عند الاستلام (COD)
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="box">
+            <h3>ملخص الطلب</h3>
+            <div id="orderItemsList">
+            </div>
+            
+            <div class="summary-row" style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                <span>المجموع الفرعي:</span>
+                <span id="subtotal-cost">0 DZD</span>
+            </div>
+            <div class="summary-row">
+                <span>تكلفة التوصيل (Yalidine):</span>
+                <span id="shipping-cost-display">0 DZD</span>
+            </div>
+            
+            <div class="summary-total">
+                <span>المجموع الإجمالي:</span>
+                <span id="total-cost-display">0 DZD</span>
+            </div>
+            
+            <button class="btn-confirm" id="confirmOrderBtn">تأكيد الطلب والدفع عند الاستلام</button>
+        </div>
+    </div>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content" style="text-align: center; max-width: 400px; padding: 40px;">
+            <div style="font-size: 5rem; margin-bottom: 20px;">🎉</div>
+            <h2 style="color: var(--primary); margin-bottom: 15px;">تم تأكيد طلبك!</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">شكراً لثقتك بـ سيارتي. سيتواصل معك البائع قريباً لتأكيد الشحن.</p>
+            <button onclick="window.location.href='index.html'" class="btn-confirm">العودة للرئيسية</button>
+        </div>
+    </div>
+
+    <script src="shared.js"></script>
+    <script src="checkout.js" defer></script>
+</body>
+</html>

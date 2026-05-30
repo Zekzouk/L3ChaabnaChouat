@@ -1,0 +1,141 @@
+
+
+body {
+    font-family: var(--font-ar);
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.navbar {
+    background: var(--bg-card);
+    padding: 15px 50px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-en);
+    font-size: 2rem;
+    color: var(--text-main);
+    font-weight: 700;
+    direction: ltr;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.product-image {
+    background: #1a2942;
+    border-radius: var(--radius-lg);
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    border: 1px solid var(--border-color);
+}
+
+.product-info h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.product-brand {
+    color: var(--primary);
+    font-weight: bold;
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+}
+
+.product-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: var(--font-en);
+    color: white;
+    margin: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.seller-info {
+    background: var(--bg-card);
+    padding: 15px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    padding: 15px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-ar);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.btn-primary:hover {
+    background: #D9561E;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    width: 100%;
+}
+
+.tabs {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 0;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.description-content {
+    color: var(--text-secondary);
+}

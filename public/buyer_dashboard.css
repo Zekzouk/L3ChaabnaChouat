@@ -1,0 +1,44 @@
+:root {
+    --bg-base: #0B1526;
+    --bg-card: #152238;
+    --primary: #F26522;
+    --text-main: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --border-color: #2e3e56;
+    --success: #22C55E;
+    --danger: #EF4444;
+    --font-ar: 'Cairo', sans-serif;
+    --font-en: 'Rajdhani', sans-serif;
+    --radius-lg: 12px;
+    --radius-md: 8px;
+    --sidebar-width: 250px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-ar); background-color: var(--bg-base); color: var(--text-main); display: flex; height: 100vh; }
+
+.sidebar { width: var(--sidebar-width); background-color: var(--bg-card); border-left: 1px solid var(--border-color); display: flex; flex-direction: column; }
+.sidebar-header { padding: 20px; border-bottom: 1px solid var(--border-color); text-align: center; }
+.logo { font-family: var(--font-en); font-size: 1.8rem; color: var(--text-main); font-weight: 700; direction: ltr; unicode-bidi: bidi-override; }
+.logo span { color: var(--primary); }
+.nav-list { list-style: none; padding: 20px 0; flex: 1; }
+.nav-link { display: flex; align-items: center; padding: 12px 15px; color: var(--text-secondary); text-decoration: none; gap: 10px; font-weight: 600; margin: 0 15px 10px; border-radius: var(--radius-md); transition: 0.3s; }
+.nav-link:hover, .nav-link.active { background-color: rgba(242, 101, 34, 0.1); color: var(--primary); }
+
+.main-content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+.header { height: 70px; background-color: var(--bg-card); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
+
+.btn-shop { background: var(--border-color); color: white; border: none; padding: 8px 16px; border-radius: var(--radius-md); font-family: var(--font-ar); cursor: pointer; text-decoration: none; }
+.btn-shop:hover { background: #3b4d6b; }
+
+.body-content { padding: 30px; overflow-y: auto; flex: 1; }
+
+.section-box { background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color); padding: 25px; margin-bottom: 25px; }
+.section-box h3 { margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 15px; text-align: right; border-bottom: 1px solid var(--border-color); }
+th { color: var(--text-secondary); font-size: 0.9rem; }
+
+.status-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+.btn-track { background: var(--primary); border: none; color: white; padding: 6px 12px; border-radius: var(--radius-md); cursor: pointer; font-family: var(--font-ar); }

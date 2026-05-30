@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحتي الشخصية | SAYARATI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="dashboard-shared.css">
+    <link rel="stylesheet" href="seller_dashboard.css"> 
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">SAYA<span>RATI</span></div>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" onclick="showSection('orders')">
+                    <span>📦</span> طلباتي السابقة
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" onclick="showSection('settings')">
+                    <span>⚙️</span> إعدادات الحساب
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <span>🏠</span> العودة للمتجر
+                </a>
+            </li>
+            <li class="nav-item" style="margin-top: 50px;">
+                <a href="#" id="logoutBtn" class="nav-link logout">
+                    <span>🚪</span> تسجيل الخروج
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="header">
+            <div class="header-title" id="welcomeMsg">أهلاً بك 👋</div>
+            <div class="header-actions">
+                <span class="admin-badge">حساب زبون</span>
+            </div>
+        </header>
+
+        <div class="dashboard-body">
+
+            <section id="orders-section" class="content-section active">
+                <div class="table-section">
+                    <div class="table-header">
+                        <h3>تاريخ طلباتي</h3>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>رقم الطلب</th>
+                                <th>المنتجات</th>
+                                <th>المجموع</th>
+                                <th>الحالة</th>
+                                <th>التاريخ</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="buyerOrdersTable">
+                            <tr>
+                                <td colspan="5" style="text-align:center; padding: 40px; color: var(--text-secondary);">جارٍ تحميل طلباتك...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="settings-section" class="content-section" style="display:none;">
+                <div class="table-section" style="max-width: 600px;">
+                    <h3>تحديث بيانات الملف الشخصي</h3>
+                    <form id="profileForm" style="margin-top:20px;">
+                        <div class="form-group">
+                            <label>الاسم الكامل</label>
+                            <input type="text" id="set-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>البريد الإلكتروني (لا يمكن تغييره)</label>
+                            <input type="email" id="set-email" class="form-control" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>رقم الهاتف</label>
+                            <input type="text" id="set-phone" class="form-control" placeholder="0550 XX XX XX">
+                        </div>
+                        <button type="submit" class="add-product-btn" style="width:100%; margin-top: 10px;">حفظ التغييرات</button>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div class="toast" id="toastMsg">تم التحديث بنجاح!</div>
+
+    <script src="shared.js"></script>
+    <script src="buyer_dashboard.js"></script>
+    <script>
+        function showSection(name) {
+            document.querySelectorAll('.content-section').forEach(s => s.style.display = 'none');
+            document.getElementById(name + '-section').style.display = 'block';
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
