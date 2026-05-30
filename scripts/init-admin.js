@@ -7,8 +7,7 @@ dotenv.config();
 
 async function initAdmin() {
     try {
-        const uri = process.env.MONGODB_URI || 'mongodb://ZakiMazen:Sayarati123@ac-qnqz41b-shard-00-00.v3rtsbu.mongodb.net:27017,ac-qnqz41b-shard-00-01.v3rtsbu.mongodb.net:27017,ac-qnqz41b-shard-00-02.v3rtsbu.mongodb.net:27017/sayarati?ssl=true&replicaSet=atlas-z0j7w5-shard-0&authSource=admin&appName=Cluster0';
-        await mongoose.connect(uri);
+        const uri = process.env.MONGODB_URI;        await mongoose.connect(uri);
         console.log('Connected to MongoDB...');
 
         const adminEmail = 'admin@sayarati.com';
