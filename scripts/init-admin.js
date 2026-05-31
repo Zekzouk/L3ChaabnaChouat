@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+﻿const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
 const User = require('../models/User');
@@ -10,7 +10,7 @@ async function initAdmin() {
         const uri = process.env.MONGODB_URI;        await mongoose.connect(uri);
         console.log('Connected to MongoDB...');
 
-        const adminEmail = 'admin@sayarati.com';
+        const adminEmail = 'admin@CarFix.com';
         await User.deleteOne({ email: adminEmail }); 
 
         const salt = await bcrypt.genSalt(10);
@@ -25,7 +25,7 @@ async function initAdmin() {
 
         await admin.save();
         console.log('--- ADMIN ACCOUNT CREATED ---');
-        console.log('Email: admin@sayarati.com');
+        console.log('Email: admin@CarFix.com');
         console.log('Password: admin123');
         console.log('-----------------------------');
         process.exit(0);

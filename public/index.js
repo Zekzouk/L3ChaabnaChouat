@@ -1,4 +1,4 @@
-
+﻿
 // ─── STATIC DEMO PRODUCTS (25 real parts, DZD prices, real images) ───────────
 const STATIC_PRODUCTS = [
   {
@@ -14,7 +14,7 @@ const STATIC_PRODUCTS = [
     reference: 'PS4-205-55-R16',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Michelin_Tyre_at_the_2012_Paris_Motor_Show_Metadata.jpg/640px-Michelin_Tyre_at_the_2012_Paris_Motor_Show_Metadata.jpg'],
     stock: 20,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-02',
@@ -29,7 +29,7 @@ const STATIC_PRODUCTS = [
     reference: 'ES-185-65-R15',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Michelin_Tyre_at_the_2012_Paris_Motor_Show_Metadata.jpg/640px-Michelin_Tyre_at_the_2012_Paris_Motor_Show_Metadata.jpg'],
     stock: 25,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-03',
@@ -44,7 +44,7 @@ const STATIC_PRODUCTS = [
     reference: 'IRIS-VAN-195-70-R15C',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Continental_automotive_tire.jpg/640px-Continental_automotive_tire.jpg'],
     stock: 30,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-04',
@@ -59,7 +59,7 @@ const STATIC_PRODUCTS = [
     reference: 'NGK-BKR6E',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sparkplug_ngk_01.jpg/640px-Sparkplug_ngk_01.jpg'],
     stock: 100,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-05',
@@ -74,7 +74,7 @@ const STATIC_PRODUCTS = [
     reference: '1987946520',
     images: ['/uploads/media__1780186450458.jpg'],
     stock: 15,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-06',
@@ -89,7 +89,7 @@ const STATIC_PRODUCTS = [
     reference: '6PK1548',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/V-belts.jpg/640px-V-belts.jpg'],
     stock: 25,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-07',
@@ -104,7 +104,7 @@ const STATIC_PRODUCTS = [
     reference: 'ELR-228.280',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Zylinderkopfdichtung_rechts.jpg/640px-Zylinderkopfdichtung_rechts.jpg'],
     stock: 12,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-08',
@@ -119,7 +119,7 @@ const STATIC_PRODUCTS = [
     reference: '09.A780.10',
     images: ['/uploads/media__1780186450457.jpg'],
     stock: 18,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-09',
@@ -134,7 +134,7 @@ const STATIC_PRODUCTS = [
     reference: '0 986 424 694',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Disc_brake_pads.jpg/640px-Disc_brake_pads.jpg'],
     stock: 40,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-10',
@@ -149,7 +149,7 @@ const STATIC_PRODUCTS = [
     reference: '735099',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Car_radiator.jpg/640px-Car_radiator.jpg'],
     stock: 10,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-11',
@@ -164,7 +164,7 @@ const STATIC_PRODUCTS = [
     reference: 'R218',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Wasserpumpe_Auto_P1060933.jpg/640px-Wasserpumpe_Auto_P1060933.jpg'],
     stock: 22,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-12',
@@ -179,7 +179,7 @@ const STATIC_PRODUCTS = [
     reference: '4222.87D',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Thermostat_01.jpg/640px-Thermostat_01.jpg'],
     stock: 35,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-13',
@@ -194,7 +194,7 @@ const STATIC_PRODUCTS = [
     reference: '0 092 S40 050',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Lead-acid_car_battery.jpg/640px-Lead-acid_car_battery.jpg'],
     stock: 30,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-14',
@@ -209,7 +209,7 @@ const STATIC_PRODUCTS = [
     reference: 'VAL-436593',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Alternator_1.jpg/640px-Alternator_1.jpg'],
     stock: 8,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-15',
@@ -224,7 +224,7 @@ const STATIC_PRODUCTS = [
     reference: '0 001 121 404',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Anlasser_P1060938.jpg/640px-Anlasser_P1060938.jpg'],
     stock: 6,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-16',
@@ -239,7 +239,7 @@ const STATIC_PRODUCTS = [
     reference: 'W 712/75',
     images: ['/uploads/media__1780186670838.jpg'],
     stock: 150,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-17',
@@ -254,7 +254,7 @@ const STATIC_PRODUCTS = [
     reference: 'A1237',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Air_filter_of_a_car.jpg/640px-Air_filter_of_a_car.jpg'],
     stock: 80,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-18',
@@ -269,7 +269,7 @@ const STATIC_PRODUCTS = [
     reference: 'HDF530',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Fuel-filter.jpg/640px-Fuel-filter.jpg'],
     stock: 60,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-19',
@@ -284,7 +284,7 @@ const STATIC_PRODUCTS = [
     reference: '1 987 432 030',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Used_and_new_cabin_air_filters.jpg/640px-Used_and_new_cabin_air_filters.jpg'],
     stock: 70,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-20',
@@ -299,7 +299,7 @@ const STATIC_PRODUCTS = [
     reference: 'MON-172115',
     images: ['/uploads/media__1780186670796.jpg'],
     stock: 12,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-21',
@@ -314,7 +314,7 @@ const STATIC_PRODUCTS = [
     reference: '42074',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Suspension_control_arm.jpg/640px-Suspension_control_arm.jpg'],
     stock: 16,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-22',
@@ -329,7 +329,7 @@ const STATIC_PRODUCTS = [
     reference: '16-16 020 0020',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Tie_rod_end.jpg/640px-Tie_rod_end.jpg'],
     stock: 28,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-23',
@@ -344,7 +344,7 @@ const STATIC_PRODUCTS = [
     reference: 'HEL-1NL008090-821',
     images: ['/uploads/media__1780186670784.jpg'],
     stock: 25,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-24',
@@ -359,7 +359,7 @@ const STATIC_PRODUCTS = [
     reference: 'TQ9000-5W40-5L',
     images: ['/uploads/media__1780186670779.jpg'],
     stock: 200,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   },
   {
     _id: 'static-25',
@@ -374,7 +374,7 @@ const STATIC_PRODUCTS = [
     reference: 'CASTROL-GTX-20W50-5L',
     images: ['https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Castrol_lubricants.jpg/640px-Castrol_lubricants.jpg'],
     stock: 150,
-    seller: { name: 'SAYARATI Demo' }
+    seller: { name: 'CarFix Demo' }
   }
 ];
 

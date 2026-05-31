@@ -1,5 +1,5 @@
-/**
- * SAYARATI — Seed Script: 25 Real Car Parts
+﻿/**
+ * CarFix — Seed Script: 25 Real Car Parts
  * Run: node scripts/seed-products.js
  *
  * - Creates a demo seller account (if not exists)
@@ -370,21 +370,21 @@ async function seedProducts() {
     console.log('✅ Connected to MongoDB Atlas...');
 
     // 1. Find or create demo seller
-    let seller = await User.findOne({ email: 'demo-seller@sayarati.com' });
+    let seller = await User.findOne({ email: 'demo-seller@CarFix.com' });
     if (!seller) {
       const salt   = await bcrypt.genSalt(10);
       const hashed = await bcrypt.hash('seller123', salt);
       seller = new User({
-        name:     'متجر سيارتي التجريبي',
-        shopName: 'SAYARATI Demo Shop',
-        email:    'demo-seller@sayarati.com',
+        name:     'متجر CarFix التجريبي',
+        shopName: 'CarFix Demo Shop',
+        email:    'demo-seller@CarFix.com',
         password: hashed,
         role:     'seller',
         status:   'active',
         wilaya:   'Alger'
       });
       await seller.save();
-      console.log('✅ Demo seller created: demo-seller@sayarati.com / seller123');
+      console.log('✅ Demo seller created: demo-seller@CarFix.com / seller123');
     } else {
       console.log('ℹ️  Demo seller already exists, reusing it.');
     }
@@ -401,7 +401,7 @@ async function seedProducts() {
 
     console.log('\n────────────────────────────────────────────────────────');
     console.log('Demo Seller Login:');
-    console.log('  Email   : demo-seller@sayarati.com');
+    console.log('  Email   : demo-seller@CarFix.com');
     console.log('  Password: seller123');
     console.log('────────────────────────────────────────────────────────\n');
     process.exit(0);

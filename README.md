@@ -1,4 +1,4 @@
-# SAYARATI — سيارتي 🚗🇩🇿
+﻿# CarFix — CarFix 🚗🇩🇿
 
 منصة بيع وشراء قطع غيار السيارات في الجزائر.
 
@@ -25,9 +25,9 @@ npm run dev          # شغّل الخادم على المنفذ 3000
 - 2 قطع: زيوت (Total Quartz, Castrol GTX)
 
 ## حساب البائع التجريبي
-- Email: demo-seller@sayarati.com
+- Email: demo-seller@CarFix.com
 - Password: seller123
 
 ## حساب المدير
-- Email: admin@sayarati.com
+- Email: admin@CarFix.com
 - Password: admin123

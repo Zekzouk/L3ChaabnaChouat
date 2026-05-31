@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs');
+﻿const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const Product = require('../models/Product');
 const { PARTS } = require('../scripts/seed-products');
@@ -6,7 +6,7 @@ const { PARTS } = require('../scripts/seed-products');
 async function autoInitializeDatabase() {
     try {
         // 1. Check if admin user exists
-        const adminEmail = 'admin@sayarati.com';
+        const adminEmail = 'admin@CarFix.com';
         const adminExists = await User.findOne({ email: adminEmail });
         if (!adminExists) {
             console.log('⏳ Auto-creating admin account...');
@@ -19,19 +19,19 @@ async function autoInitializeDatabase() {
                 role: 'admin'
             });
             await admin.save();
-            console.log('✅ Default admin account created (admin@sayarati.com / admin123).');
+            console.log('✅ Default admin account created (admin@CarFix.com / admin123).');
         }
 
         // 2. Check if demo seller exists
-        const sellerEmail = 'demo-seller@sayarati.com';
+        const sellerEmail = 'demo-seller@CarFix.com';
         let seller = await User.findOne({ email: sellerEmail });
         if (!seller) {
             console.log('⏳ Auto-creating demo seller account...');
             const salt = await bcrypt.genSalt(10);
             const hashed = await bcrypt.hash('seller123', salt);
             seller = new User({
-                name: 'متجر سيارتي التجريبي',
-                shopName: 'SAYARATI Demo Shop',
+                name: 'متجر CarFix التجريبي',
+                shopName: 'CarFix Demo Shop',
                 email: sellerEmail,
                 password: hashed,
                 role: 'seller',
@@ -39,7 +39,7 @@ async function autoInitializeDatabase() {
                 wilaya: 'Alger'
             });
             await seller.save();
-            console.log('✅ Demo seller account created (demo-seller@sayarati.com / seller123).');
+            console.log('✅ Demo seller account created (demo-seller@CarFix.com / seller123).');
         }
 
         // 3. Check if products exist

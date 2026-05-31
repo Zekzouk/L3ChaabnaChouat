@@ -1,13 +1,13 @@
-
+﻿
 
 const Auth = {
-    getToken: () => localStorage.getItem('sayaratiToken'),
-    getUser: () => JSON.parse(localStorage.getItem('sayaratiUser')),
-    setUser: (user) => localStorage.setItem('sayaratiUser', JSON.stringify(user)),
-    setToken: (token) => localStorage.setItem('sayaratiToken', token),
+    getToken: () => localStorage.getItem('CarFixToken'),
+    getUser: () => JSON.parse(localStorage.getItem('CarFixUser')),
+    setUser: (user) => localStorage.setItem('CarFixUser', JSON.stringify(user)),
+    setToken: (token) => localStorage.setItem('CarFixToken', token),
     clear: () => {
-        localStorage.removeItem('sayaratiToken');
-        localStorage.removeItem('sayaratiUser');
+        localStorage.removeItem('CarFixToken');
+        localStorage.removeItem('CarFixUser');
     },
     logout: () => {
         Auth.clear();
@@ -126,7 +126,7 @@ function getEmojiForCategory(cat) {
 }
 
 const Cart = {
-    storageKey: 'sayaratiCart',
+    storageKey: 'CarFixCart',
     load: () => JSON.parse(localStorage.getItem(Cart.storageKey)) || [],
     save: (cart) => localStorage.setItem(Cart.storageKey, JSON.stringify(cart)),
     add: (product) => {

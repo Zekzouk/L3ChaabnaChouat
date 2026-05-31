@@ -1,4 +1,4 @@
-
+﻿
 const modal = document.getElementById('productModal');
 const productForm = document.getElementById('addProductForm');
 const productsTable = document.getElementById('myProductsTable');
@@ -35,7 +35,7 @@ function renderPendingScreen() {
         <div style="height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#0B1526; color:white; font-family:'Cairo', sans-serif; text-align:center; padding:20px;">
             <div style="font-size:5rem;">⏳</div>
             <h2 style="color:#F26522; margin-top:20px;">حسابك قيد المراجعة</h2>
-            <p style="margin-top:10px; color:#94A3B8;">شكراً لتسجيلك في سيارتي! متجرك الآن قيد المراجعة من قبل الإدارة.<br>سنقوم بتفعيل حسابك قريباً جداً لتتمكن من عرض منتجاتك.</p>
+            <p style="margin-top:10px; color:#94A3B8;">شكراً لتسجيلك في CarFix! متجرك الآن قيد المراجعة من قبل الإدارة.<br>سنقوم بتفعيل حسابك قريباً جداً لتتمكن من عرض منتجاتك.</p>
             <button onclick="Auth.logout()" style="margin-top:30px; padding:10px 20px; background:#152238; color:white; border:1px solid #2e3e56; border-radius:8px; cursor:pointer;">تسجيل الخروج</button>
         </div>
     `;

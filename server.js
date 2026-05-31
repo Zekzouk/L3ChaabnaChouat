@@ -1,4 +1,4 @@
-require('dotenv').config();
+﻿require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -37,7 +37,7 @@ app.use('/api/orders', require('./routes/orders'));
 app.get('/api/status', (req, res) => {
     res.json({
         status: 'success',
-        message: 'SAYARATI API is running!',
+        message: 'CarFix API is running!',
         timestamp: new Date()
     });
 });
