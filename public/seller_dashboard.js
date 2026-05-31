@@ -45,9 +45,51 @@ function loadProfileData() {
     if (user) {
         const nameField = document.getElementById('set-name');
         const phoneField = document.getElementById('set-phone');
-        if (nameField) nameField.value = user.name;
+        const shopNameField = document.getElementById('set-shopName');
+        if (nameField) nameField.value = user.name || '';
         if (phoneField) phoneField.value = user.phone || '';
+        if (shopNameField) shopNameField.value = user.shopName || '';
     }
+}
+
+// Profile form submit handler
+const profileForm = document.getElementById('profileForm');
+if (profileForm) {
+    profileForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('set-name').value.trim();
+        const shopName = document.getElementById('set-shopName').value.trim();
+        const phone = document.getElementById('set-phone').value.trim();
+
+        if (!name) {
+            showToast('الرجاء إدخال الاسم الكامل', 'danger');
+            return;
+        }
+
+        showToast('جارٍ حفظ التغييرات...');
+        const { ok, data } = await apiFetch('/api/auth/profile', {
+            method: 'PUT',
+            body: JSON.stringify({ name, shopName, phone })
+        });
+
+        if (ok) {
+            // Update local user data
+            user.name = data.user.name;
+            user.shopName = data.user.shopName;
+            user.phone = data.user.phone;
+            Auth.setUser(user);
+
+            // Update welcome message
+            if (document.getElementById('welcomeMsg')) {
+                document.getElementById('welcomeMsg').textContent = `أهلاً بك، ${user.name} 👋`;
+            }
+
+            showToast('تم حفظ التغييرات بنجاح ✅');
+        } else {
+            showToast('فشل في حفظ التغييرات: ' + (data?.message || 'خطأ غير متوقع'), 'danger');
+        }
+    });
 }
 
 let allMyProducts = [];
