@@ -1,4 +1,4 @@
-
+﻿
 document.addEventListener('DOMContentLoaded', () => {
     if (!Auth.checkRole('admin')) return;
 
@@ -15,7 +15,7 @@ function setupNavigation() {
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const target = link.getAttribute('data-target');
-            if (!target) return; // Allow normal link navigation if there is no data-target
+            if (!target) return; 
 
             e.preventDefault();
 
@@ -43,8 +43,7 @@ async function loadUsers() {
     const { ok: okUsers, data: users } = await apiFetch('/api/admin/users');
     if (!okUsers) return;
 
-   
-    const allUsersTable = document.getElementById('allUsersTable');
+const allUsersTable = document.getElementById('allUsersTable');
     if (allUsersTable) {
         allUsersTable.innerHTML = users.map(u => `
             <tr>
@@ -64,12 +63,10 @@ async function loadUsers() {
         `).join('');
     }
 
-    
-    const { ok: okReqs, data: shopRequests } = await apiFetch('/api/admin/shop-requests');
+const { ok: okReqs, data: shopRequests } = await apiFetch('/api/admin/shop-requests');
     const pendingSellers = okReqs ? shopRequests.filter(r => r.status === 'pending') : [];
 
-    
-    const dashPendingTable = document.getElementById('dashPendingSellersTable');
+const dashPendingTable = document.getElementById('dashPendingSellersTable');
     if (dashPendingTable) {
         if (pendingSellers.length === 0) {
             dashPendingTable.innerHTML = `<tr><td colspan="4" style="text-align:center; padding: 20px; color: var(--text-secondary);">لا توجد طلبات معلقة حالياً ✅</td></tr>`;
@@ -88,8 +85,7 @@ async function loadUsers() {
         }
     }
 
-    
-    const pendingTable = document.getElementById('pendingSellersTable');
+const pendingTable = document.getElementById('pendingSellersTable');
     if (pendingTable) {
         if (pendingSellers.length === 0) {
             pendingTable.innerHTML = `<tr><td colspan="8" style="text-align:center; padding: 30px; color: var(--text-secondary);">لا توجد طلبات معلقة حالياً ✅</td></tr>`;
@@ -121,8 +117,7 @@ async function loadUsers() {
     const dashPendingCount = document.getElementById('dashPendingCount');
     if (dashPendingCount) dashPendingCount.textContent = pendingSellers.length;
 
-    
-    const allSellersTable = document.getElementById('allSellersTable');
+const allSellersTable = document.getElementById('allSellersTable');
     if (allSellersTable) {
         const sellers = users.filter(u => u.role === 'seller');
         allSellersTable.innerHTML = sellers.map(s => `

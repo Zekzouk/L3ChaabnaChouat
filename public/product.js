@@ -1,4 +1,4 @@
-
+﻿
 
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
@@ -32,7 +32,7 @@ function renderProduct(p) {
 
     productContainer.innerHTML = `
         <div class="product-layout">
-            <!-- Left: Image & Gallery -->
+            
             <div class="product-visuals">
                 <div class="main-image-container" style="height: 400px; display:flex; align-items:center; justify-content:center; background:var(--bg-card); border-radius:12px; overflow:hidden; border:1px solid var(--border-color);">
                     <img id="mainDisplayImage" src="${p.image || (p.images && p.images[0]) || 'placeholder.jpg'}" style="width:100%; height:100%; object-fit:contain;">
@@ -48,7 +48,7 @@ function renderProduct(p) {
                 ` : ''}
             </div>
 
-            <!-- Right: Details -->
+            
             <div class="product-info">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
                     <span class="product-brand">${p.condition === 'new' ? 'جديد' : 'مستعمل'}${p.authenticity ? (p.authenticity === 'original' ? ' - أصلي' : ' - مقلد') : ''}</span>

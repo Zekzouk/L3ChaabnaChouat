@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const router = express.Router();
 const Product = require('../models/Product');
 const auth = require('../middleware/auth');
@@ -81,9 +81,8 @@ router.get('/:id', async (req, res) => {
         if (!product) {
             return res.status(404).json({ message: 'المنتج غير موجود' });
         }
-        
 
-        product.views = (product.views || 0) + 1;
+product.views = (product.views || 0) + 1;
         await product.save();
 
         res.json(product);

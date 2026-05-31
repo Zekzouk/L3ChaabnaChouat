@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -168,9 +168,8 @@ router.put('/profile', auth, async (req, res) => {
         if (phone) user.phone = phone;
 
         await user.save();
-        
 
-        const updatedUser = user.toObject();
+const updatedUser = user.toObject();
         delete updatedUser.password;
         
         res.json({ message: 'تم تحديث الملف الشخصي بنجاح', user: updatedUser });

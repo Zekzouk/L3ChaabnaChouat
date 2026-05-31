@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const Product = require('../models/Product');
@@ -58,9 +58,8 @@ router.put('/users/:id/status', auth, adminOnly, async (req, res) => {
         
         user.status = status;
         await user.save();
-        
 
-        if (user.role === 'seller') {
+if (user.role === 'seller') {
             let requestStatus = 'pending';
             if (status === 'active') requestStatus = 'approved';
             else if (status === 'banned') requestStatus = 'rejected';

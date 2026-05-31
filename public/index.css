@@ -1,4 +1,4 @@
-
+﻿
 :root {
     
     --bg-card-hover: #1e2f4a;
@@ -6,14 +6,12 @@
     --danger: #EF4444;
     --glass-bg: rgba(11, 21, 38, 0.85);
 
-    
-    --space-sm: 0.5rem;
+--space-sm: 0.5rem;
     --space-md: 1rem;
     --space-lg: 2rem;
     --space-xl: 4rem;
 
-    
-    --radius-full: 9999px;
+--radius-full: 9999px;
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
     --shadow-glow: 0 0 15px rgba(242, 101, 34, 0.3);
 }

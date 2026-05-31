@@ -5,7 +5,7 @@ const { PARTS } = require('../scripts/seed-products');
 
 async function autoInitializeDatabase() {
     try {
-        // 1. Check if admin user exists
+        
         const adminEmail = 'admin@CarFix.com';
         const adminExists = await User.findOne({ email: adminEmail });
         if (!adminExists) {
@@ -22,8 +22,7 @@ async function autoInitializeDatabase() {
             console.log('✅ Default admin account created (admin@CarFix.com / admin123).');
         }
 
-        // 2. Check if demo seller exists
-        const sellerEmail = 'demo-seller@CarFix.com';
+const sellerEmail = 'demo-seller@CarFix.com';
         let seller = await User.findOne({ email: sellerEmail });
         if (!seller) {
             console.log('⏳ Auto-creating demo seller account...');
@@ -42,8 +41,7 @@ async function autoInitializeDatabase() {
             console.log('✅ Demo seller account created (demo-seller@CarFix.com / seller123).');
         }
 
-        // 3. Check if products exist
-        const productCount = await Product.countDocuments();
+const productCount = await Product.countDocuments();
         if (productCount === 0) {
             console.log('⏳ Database is empty. Seeding 25 products...');
             const docs = PARTS.map(p => ({ ...p, seller: seller._id, status: 'active' }));

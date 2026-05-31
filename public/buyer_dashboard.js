@@ -1,4 +1,4 @@
-const ordersTable = document.getElementById('buyerOrdersTable');
+﻿const ordersTable = document.getElementById('buyerOrdersTable');
 const profileForm = document.getElementById('profileForm');
 
 let user = Auth.getUser();

@@ -1,10 +1,4 @@
-﻿/**
- * CarFix — Seed Script: 25 Real Car Parts
- * Run: node scripts/seed-products.js
- *
- * - Creates a demo seller account (if not exists)
- * - Inserts 25 real auto parts with real product images & DZD prices
- */
+﻿  
 
 const mongoose = require('mongoose');
 const bcrypt   = require('bcryptjs');
@@ -14,11 +8,8 @@ const Product  = require('../models/Product');
 
 dotenv.config();
 
-// ─── 25 REAL PARTS ──────────────────────────────────────────────────────────
-// Prices are realistic DZD estimates (2025) for the Algerian market.
-// Images are direct product photos from manufacturer / distributor sites.
 const PARTS = [
-  // ── WHEELS & TIRES ─────────────────────────────────────────────────────
+  
   {
     title: 'بنو Michelin Pilot Sport 4 — 205/55 R16',
     description: 'إطار رياضي عالي الأداء من ميشلان. مثالي للطرق الجزائرية، ثبات ممتاز في التفريمات ومقاومة تآكل استثنائية. مناسب لـ Peugeot 308, Renault Megane, Golf.',
@@ -46,8 +37,7 @@ const PARTS = [
     stock: 30
   },
 
-  // ── ENGINE ──────────────────────────────────────────────────────────────
-  {
+{
     title: 'شمعة إشعال NGK BKR6E — بواجي',
     description: 'بواجي NGK الأصلي موديل BKR6E. يستخدم في أغلب سيارات رينو وبيجو وسيتروان المنتشرة في الجزائر. ضمان أداء محرك مثالي واقتصاد في الوقود.',
     price: 850,
@@ -100,8 +90,7 @@ const PARTS = [
     stock: 12
   },
 
-  // ── BRAKES ──────────────────────────────────────────────────────────────
-  {
+{
     title: 'طقم ديسك Brembo — Disques de frein avant',
     description: 'قرصا الفرامل الأماميان من Brembo الإيطالية. أصلي OEM. أداء فرملة استثنائي وثبات في درجات الحرارة العالية.',
     price: 8500,
@@ -128,8 +117,7 @@ const PARTS = [
     stock: 40
   },
 
-  // ── COOLING & A/C ───────────────────────────────────────────────────────
-  {
+{
     title: 'رادياتير المحرك Valeo — Radiateur moteur',
     description: 'رادياتير المحرك الكامل من Valeo الفرنسية. معدن + بلاستيك. ضمان 2 سنة. سهل التركيب بدون تعديل.',
     price: 11500,
@@ -169,8 +157,7 @@ const PARTS = [
     stock: 35
   },
 
-  // ── ELECTRICAL & LIGHTING ───────────────────────────────────────────────
-  {
+{
     title: 'بطارية Bosch S4 — 60Ah 540A',
     description: 'بطارية Bosch S4 مقاومة للحرارة الجزائرية. 60Ah ـ 540 Ampères de démarrage. ضمان 2 سنة. الأكثر مبيعاً في الجزائر.',
     price: 16000,
@@ -210,8 +197,7 @@ const PARTS = [
     stock: 6
   },
 
-  // ── FILTERS & FUEL ──────────────────────────────────────────────────────
-  {
+{
     title: 'فلتر الزيت Mann-Filter — Filtre à huile W 712/75',
     description: 'فلتر الزيت الدائري الأصلي من Mann-Filter الألمانية. موديل W 712/75. تصفية ممتازة للشوائب لحماية محركات VAG ورينو.',
     price: 850,
@@ -264,8 +250,7 @@ const PARTS = [
     stock: 70
   },
 
-  // ── SUSPENSION & STEERING ────────────────────────────────────────────────
-  {
+{
     title: 'مساعد كامل Monroe Quick-Strut — Amortisseur complet',
     description: 'مساعد أمامي كامل من نوع Quick-Strut من Monroe الألمانية. يشمل المساعد، الياي (Ressort)، والكرسي العلوي. جاهز للتركيب مباشرة.',
     price: 13500,
@@ -305,8 +290,7 @@ const PARTS = [
     stock: 28
   },
 
-  // ── BODY PARTS ──────────────────────────────────────────────────────────
-  {
+{
     title: 'مصباح الضباب Hella — Phare antibrouillard',
     description: 'مصباح ضباب دائري (Antibrouillard) عدسة ميتاليك من Hella. إضاءة قوية ومثالية للظروف الجوية الصعبة والضباب.',
     price: 3600,
@@ -333,8 +317,7 @@ const PARTS = [
     stock: 11
   },
 
-  // ── TOOLS & FLUIDS ──────────────────────────────────────────────────────
-  {
+{
     title: 'زيت المحرك Total Quartz 9000 — 5W40 — 5L',
     description: 'زيت المحرك التخليقي بالكامل (Fully Synthetic) من توتال. لزوجة 5W40 سعة 5 لتر. حماية ممتازة للمحرك في درجات الحرارة العالية ومناسب للسيارات الحديثة.',
     price: 4900,
@@ -362,15 +345,13 @@ const PARTS = [
   }
 ];
 
-// ─── MAIN ────────────────────────────────────────────────────────────────────
 async function seedProducts() {
   try {
     const uri = process.env.MONGODB_URI;
     await mongoose.connect(uri);
     console.log('✅ Connected to MongoDB Atlas...');
 
-    // 1. Find or create demo seller
-    let seller = await User.findOne({ email: 'demo-seller@CarFix.com' });
+let seller = await User.findOne({ email: 'demo-seller@CarFix.com' });
     if (!seller) {
       const salt   = await bcrypt.genSalt(10);
       const hashed = await bcrypt.hash('seller123', salt);
@@ -389,12 +370,10 @@ async function seedProducts() {
       console.log('ℹ️  Demo seller already exists, reusing it.');
     }
 
-    // 2. Remove old seeded products from this seller (idempotent)
-    const deleted = await Product.deleteMany({ seller: seller._id });
+const deleted = await Product.deleteMany({ seller: seller._id });
     console.log(`🗑️  Removed ${deleted.deletedCount} old seeded products.`);
 
-    // 3. Insert all 25 parts
-    const docs = PARTS.map(p => ({ ...p, seller: seller._id, status: 'active' }));
+const docs = PARTS.map(p => ({ ...p, seller: seller._id, status: 'active' }));
     const inserted = await Product.insertMany(docs);
     console.log(`\n🎉 SUCCESS! Inserted ${inserted.length} products.\n`);
     inserted.forEach((p, i) => console.log(`  ${i + 1}. ${p.title}  →  ${p.price.toLocaleString()} DZD`));

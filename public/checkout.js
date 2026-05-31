@@ -1,4 +1,4 @@
-
+﻿
 
 const itemsList = document.getElementById('orderItemsList');
 const subtotalDisplay = document.getElementById('subtotal-cost');

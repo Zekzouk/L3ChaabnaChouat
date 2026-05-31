@@ -1,5 +1,5 @@
 ﻿
-// ─── STATIC DEMO PRODUCTS (25 real parts, DZD prices, real images) ───────────
+
 const STATIC_PRODUCTS = [
   {
     _id: 'static-01',
@@ -378,7 +378,6 @@ const STATIC_PRODUCTS = [
   }
 ];
 
-// ─── FILTER & SEARCH STATIC PRODUCTS ────────────────────────────────────────
 function filterStaticProducts(params = {}) {
   let results = [...STATIC_PRODUCTS];
 
@@ -423,7 +422,6 @@ function filterStaticProducts(params = {}) {
   return results;
 }
 
-// ─── CART & STATE ────────────────────────────────────────────────────────────
 let cart = Cart.load();
 let allProducts = [];
 let currentPage = 1;
@@ -480,8 +478,7 @@ async function fetchProducts(params = {}, page = 1) {
     lastParams = params;
     currentPage = page;
 
-    // ── Try API first, fall back to static data if offline / no backend ──
-    let products = [];
+let products = [];
     let total = 0;
     let totalPages = 1;
     let usedStatic = false;

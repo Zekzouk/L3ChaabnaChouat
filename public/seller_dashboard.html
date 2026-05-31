@@ -11,8 +11,7 @@
 </head>
 <body>
 
-    
-    <aside class="sidebar">
+<aside class="sidebar">
         <div class="sidebar-header">
             <div class="logo">Car<span>Fix</span></div>
             <div style="color: var(--text-secondary); font-size:0.8rem; margin-top:5px;">لوحة البائع</div>
@@ -46,11 +45,9 @@
         </ul>
     </aside>
 
-    
-    <main class="main-content">
+<main class="main-content">
 
-        
-        <header class="header">
+<header class="header">
             <div class="header-title" id="welcomeMsg">أهلاً بك 👋</div>
             <div class="header-actions">
                 <button class="btn-add" onclick="openModal()">+ إضافة منتج</button>
@@ -60,11 +57,9 @@
             </div>
         </header>
 
-        
-        <div class="dashboard-body">
+<div class="dashboard-body">
 
-            
-            <section id="products-section" class="content-section active">
+<section id="products-section" class="content-section active">
                 
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -83,8 +78,7 @@
                     </div>
                 </div>
 
-                
-                <div class="table-section">
+<div class="table-section">
                     <div class="table-header" style="flex-direction: column; align-items: stretch; gap: 15px;">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <h3>قائمة منتجاتي</h3>
@@ -113,8 +107,7 @@
                 </div>
             </section>
 
-            
-            <section id="orders-section" class="content-section">
+<section id="orders-section" class="content-section">
                 <div class="table-section">
                     <div class="table-header" style="flex-direction: column; align-items: stretch; gap: 15px;">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -149,8 +142,7 @@
                 </div>
             </section>
 
-            
-            <section id="settings-section" class="content-section">
+<section id="settings-section" class="content-section">
                 <div class="table-section" style="max-width: 550px; overflow:visible;">
                     <div class="table-header">
                         <h3>⚙️ إعدادات الحساب</h3>
@@ -176,8 +168,7 @@
         </div>
     </main>
 
-    
-    <div class="modal-overlay" id="productModal">
+<div class="modal-overlay" id="productModal">
         <div class="modal-card">
             <div class="modal-header">
                 <h3 id="modalTitle">📦 إضافة منتج جديد</h3>
@@ -264,13 +255,12 @@
         </div>
     </div>
 
-    
-    <div class="toast" id="toastMsg"></div>
+<div class="toast" id="toastMsg"></div>
 
     <script src="shared.js"></script>
     <script src="seller_dashboard.js"></script>
     <script>
-        // Section navigation
+        
         document.querySelectorAll('.nav-link[data-section]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();

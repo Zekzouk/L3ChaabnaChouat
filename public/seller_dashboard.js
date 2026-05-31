@@ -52,7 +52,6 @@ function loadProfileData() {
     }
 }
 
-// Profile form submit handler
 const profileForm = document.getElementById('profileForm');
 if (profileForm) {
     profileForm.addEventListener('submit', async (e) => {
@@ -74,14 +73,13 @@ if (profileForm) {
         });
 
         if (ok) {
-            // Update local user data
+            
             user.name = data.user.name;
             user.shopName = data.user.shopName;
             user.phone = data.user.phone;
             Auth.setUser(user);
 
-            // Update welcome message
-            if (document.getElementById('welcomeMsg')) {
+if (document.getElementById('welcomeMsg')) {
                 document.getElementById('welcomeMsg').textContent = `أهلاً بك، ${user.name} 👋`;
             }
 
@@ -130,9 +128,8 @@ function renderProducts(data) {
             </td>
         </tr>
     `).join('');
-    
 
-    const countBadge = document.getElementById('activeProductsCount');
+const countBadge = document.getElementById('activeProductsCount');
     if (countBadge) countBadge.textContent = allMyProducts.length;
 }
 
@@ -218,9 +215,8 @@ async function openEditModal(id) {
         document.getElementById('p-carModel').value = data.carModel || '';
         document.getElementById('p-description').value = data.description;
         document.getElementById('p-price').value = data.price;
-        
 
-        document.getElementById('p-image').required = false;
+document.getElementById('p-image').required = false;
 
         if (document.getElementById('modalTitle')) {
             document.getElementById('modalTitle').textContent = '✏️ تعديل المنتج';
@@ -306,13 +302,13 @@ function renderOrders(data) {
                 <td colspan="6" style="padding:0;">
                     <div style="padding:20px; display:grid; grid-template-columns:1fr 1fr; gap:20px; border-bottom:1px solid var(--border-color);">
                         
-                        <!-- Order Items Info -->
+                        
                         <div>
                             <h4 style="margin-bottom:15px; color:var(--text-main); border-bottom:1px solid var(--border-color); padding-bottom:5px;">📦 تفاصيل المنتجات</h4>
                             ${itemsHtml}
                         </div>
 
-                        <!-- Delivery & Payment Info -->
+                        
                         <div>
                             <h4 style="margin-bottom:15px; color:var(--text-main); border-bottom:1px solid var(--border-color); padding-bottom:5px;">🚚 معلومات التوصيل والدفع</h4>
                             
@@ -356,9 +352,8 @@ function filterOrders() {
 
     const now = new Date();
     const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
-    
 
-    const dayOfWeek = now.getDay();
+const dayOfWeek = now.getDay();
     const weekStart = new Date(todayStart - (dayOfWeek * 24 * 60 * 60 * 1000)).getTime();
 
     const filtered = allMyOrders.filter(o => {
