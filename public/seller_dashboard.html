@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة البائع | SAYARATI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="dashboard-shared.css">
+    <link rel="stylesheet" href="seller_dashboard.css">
+</head>
+<body>
+
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">SAYA<span>RATI</span></div>
+            <div style="color: var(--text-secondary); font-size:0.8rem; margin-top:5px;">لوحة البائع</div>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" data-section="products-section">
+                    <span>📦</span> منتجاتي
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-section="orders-section">
+                    <span>🛒</span> الطلبات الواردة
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" data-section="settings-section">
+                    <span>⚙️</span> الإعدادات
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <span>🏠</span> العودة للمتجر
+                </a>
+            </li>
+            <li class="nav-item" style="margin-top:auto; padding-top:20px;">
+                <a href="#" id="logoutBtn" class="nav-link logout">
+                    <span>🚪</span> تسجيل الخروج
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    
+    <main class="main-content">
+
+        
+        <header class="header">
+            <div class="header-title" id="welcomeMsg">أهلاً بك 👋</div>
+            <div class="header-actions">
+                <button class="btn-add" onclick="openModal()">+ إضافة منتج</button>
+                <div class="profile-btn">
+                    <span class="profile-avatar">🏪</span>
+                </div>
+            </div>
+        </header>
+
+        
+        <div class="dashboard-body">
+
+            
+            <section id="products-section" class="content-section active">
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon products">📦</div>
+                        <div class="stat-info">
+                            <h4>منتجاتي النشطة</h4>
+                            <p id="activeProductsCount">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orders">🛒</div>
+                        <div class="stat-info">
+                            <h4>طلبات جديدة</h4>
+                            <p id="pendingOrdersCount">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="table-section">
+                    <div class="table-header" style="flex-direction: column; align-items: stretch; gap: 15px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3>قائمة منتجاتي</h3>
+                            <button class="btn-add" onclick="openModal()">+ إضافة</button>
+                        </div>
+                        <div>
+                            <input type="text" id="productSearchInput" class="form-control" placeholder="بحث باسم المنتج، الماركة، رقم المرجع، أو نوع السيارة..." style="width: 100%; padding: 10px; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); color: white; border-radius: 8px;">
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>اسم المنتج</th>
+                                <th>الفئة</th>
+                                <th>السعر</th>
+                                <th>الحالة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="myProductsTable">
+                            <tr>
+                                <td colspan="5" style="text-align:center; padding:30px; color:var(--text-secondary);">لا توجد منتجات بعد</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            
+            <section id="orders-section" class="content-section">
+                <div class="table-section">
+                    <div class="table-header" style="flex-direction: column; align-items: stretch; gap: 15px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3>الطلبات الواردة</h3>
+                        </div>
+                        <div style="display: flex; gap: 15px;">
+                            <input type="text" id="orderSearchInput" class="form-control" placeholder="بحث برقم الطلب، اسم الزبون، أو رقم الهاتف..." style="flex: 1; padding: 10px; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); color: white; border-radius: 8px;">
+                            <select id="orderDateFilter" class="form-control" style="width: 150px; padding: 10px; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); color: white; border-radius: 8px;">
+                                <option value="all">كل الأوقات</option>
+                                <option value="today">اليوم</option>
+                                <option value="week">هذا الأسبوع</option>
+                            </select>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>رقم الطلب</th>
+                                <th>المنتجات</th>
+                                <th>الزبون</th>
+                                <th>المجموع</th>
+                                <th>الحالة</th>
+                                <th>تحديث</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <tr>
+                                <td colspan="6" style="text-align:center; padding:30px; color:var(--text-secondary);">لا توجد طلبات حالياً</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            
+            <section id="settings-section" class="content-section">
+                <div class="table-section" style="max-width: 550px; overflow:visible;">
+                    <div class="table-header">
+                        <h3>⚙️ إعدادات الحساب</h3>
+                    </div>
+                    <form id="profileForm" style="padding: 25px;">
+                        <div class="form-group">
+                            <label style="display:block; margin-bottom:8px; font-weight:600; color:var(--text-secondary);">الاسم الكامل</label>
+                            <input type="text" id="set-name" class="form-control" placeholder="الاسم الكامل">
+                        </div>
+                        <div class="form-group">
+                            <label style="display:block; margin-bottom:8px; font-weight:600; color:var(--text-secondary);">رقم الهاتف</label>
+                            <input type="text" id="set-phone" class="form-control" placeholder="0550 XX XX XX">
+                        </div>
+                        <button type="submit" class="btn-add" style="width:100%; margin-top:10px; padding:12px;">حفظ التغييرات</button>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modalTitle">📦 إضافة منتج جديد</h3>
+                <button class="close-btn" onclick="closeModal()">✕</button>
+            </div>
+            <form id="addProductForm">
+                <input type="hidden" id="p-id" value="">
+                <div class="form-group" style="display:grid; grid-template-columns:2fr 1fr; gap:10px;">
+                    <input type="text" id="p-title" class="form-control" placeholder="اسم القطعة *" required>
+                    <input type="text" id="p-reference" class="form-control" placeholder="رقم المرجع (اختياري)">
+                </div>
+                <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                    <select id="p-brand" class="form-control">
+                        <option value="">اختر الماركة (براند)...</option>
+                        <option value="Bosch">Bosch</option>
+                        <option value="Valeo">Valeo</option>
+                        <option value="NGK">NGK</option>
+                        <option value="Brembo">Brembo</option>
+                        <option value="Delphi">Delphi</option>
+                        <option value="Mann-Filter">Mann-Filter</option>
+                        <option value="Febi Bilstein">Febi Bilstein</option>
+                        <option value="Purflux">Purflux</option>
+                        <option value="Magneti Marelli">Magneti Marelli</option>
+                        <option value="Monroe">Monroe</option>
+                        <option value="Meyle">Meyle</option>
+                        <option value="Naftal">Naftal</option>
+                        <option value="Iris">Iris</option>
+                        <option value="Other">أخرى (Other)</option>
+                    </select>
+                    <select id="p-carModel" class="form-control">
+                        <option value="">نوع السيارة المتوافقة...</option>
+                        <option value="Peugeot">Peugeot</option>
+                        <option value="Renault">Renault</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                    </select>
+                </div>
+                <div class="form-group" id="custom-brand-group" style="display:none; margin-bottom: 15px;">
+                    <input type="text" id="p-brand-custom" class="form-control" placeholder="اكتب اسم الماركة البديلة هنا... *">
+                </div>
+                <div class="form-group" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+                    <select id="p-category" class="form-control" required>
+                        <option value="">اختر الفئة...</option>
+                        <option value="Engine">الموتور وملحقاته (Engine)</option>
+                        <option value="Brakes">الفرامل (Brakes)</option>
+                        <option value="Cooling & A/C">الردياتير والتكييف (Cooling & A/C)</option>
+                        <option value="Electrical & Lighting">الكهرباء والمصابيح (Electrical & Lighting)</option>
+                        <option value="Body Parts">الهيكل (Body Parts)</option>
+                        <option value="Suspension & Steering">السيسبانسيون والتوجيه (Suspension & Steering)</option>
+                        <option value="Transmission">علبة السرعة / البواط (Transmission)</option>
+                        <option value="Fuel & Air">الفلاتر ونظام الوقود (Fuel & Air)</option>
+                        <option value="Wheels & Tires">الجانط (Wheels & Tires)</option>
+                        <option value="Interior">الصالون والفرش الداخلي (Interior)</option>
+                        <option value="Hoses & Hardware">الديوريت وقطع التثبيت (Hoses & Hardware)</option>
+                        <option value="Tools & Fluids">العدد والزيوت (Tools & Fluids)</option>
+                    </select>
+                    <select id="p-condition" class="form-control">
+                        <option value="new">🆕 جديد</option>
+                        <option value="used">♻️ مستعمل</option>
+                    </select>
+                    <select id="p-authenticity" class="form-control" required>
+                        <option value="">النوعية...</option>
+                        <option value="original">✅ أصلي</option>
+                        <option value="fake">⚠️ مقلد/تجاري</option>
+                    </select>
+                </div>
+                <div class="form-grid">
+                    <input type="number" id="p-price" class="form-control" placeholder="السعر بالدينار (DZD) *" required min="0">
+                    <input type="number" id="p-stock" class="form-control" placeholder="الكمية المتوفرة *" required min="1" value="1">
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 5px;">صورة المنتج *</label>
+                    <input type="file" id="p-image" class="form-control" accept="image/*" required>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="p-description" class="form-control" placeholder="وصف المنتج..." rows="3" style="resize:vertical;"></textarea>
+                </div>
+
+                <div style="display:flex; gap:10px; margin-top:20px;">
+                    <button type="submit" class="btn-add" style="flex:1; padding:12px;">💾 حفظ المنتج</button>
+                    <button type="button" onclick="closeModal()" style="flex:1; padding:12px; background:var(--bg-card); color:var(--text-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); cursor:pointer;">إلغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+    <div class="toast" id="toastMsg"></div>
+
+    <script src="shared.js"></script>
+    <script src="seller_dashboard.js"></script>
+    <script>
+        // Section navigation
+        document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-section');
+
+                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                document.getElementById(target).classList.add('active');
+
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
